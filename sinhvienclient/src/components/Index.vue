@@ -255,21 +255,18 @@ export default {
 	dateFormat (tdate) {
 		let date = new Date(tdate)
 		
-		let ngay = '00'
+		let ngay = date.getDate()
 		if (date.getDate() < 10) {
 		  ngay = '0' + date.getDate()
-		} else {
-		  ngay = date.getDate()
+		}
+		console.log(tdate)
+		console.log(date.getMonth())
+		let thang = date.getMonth() + 1
+		if (thang < 10) {
+		  thang = '0' + thang
 		}
 		
-		let thang = '00'
-		if (date.getMonth() < 10) {
-		  thang = '0' + date.getDate()
-		} else {
-		  thang = date.getMonth()
-		}
-		
-		let dateConvert =  date.getFullYear() + '-' + thang + '-' + ngay
+		let dateConvert = date.getFullYear() + '-' + thang + '-' + ngay
 		return dateConvert
 	}
   }
